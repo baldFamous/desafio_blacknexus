@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'eventApp', # aplicacion de eventos
     'rest_framework', # para crear api crud
+    'coreapi', # para documentar automaticamente la api
     'corsheaders', # para configurar cors para django y react
 ]
 
@@ -128,3 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Sitios permitidos para CORS
 CORS_ALLOWED_ORIGINS = []
+
+# Configuracion de documentacion de la api
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
