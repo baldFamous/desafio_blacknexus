@@ -8,14 +8,16 @@ import {Toaster} from "react-hot-toast";
 function App(){
     return (
         <BrowserRouter>
-            <Navigation />
-            <Routes>
-                <Route path="/" element={< Navigate to="/Event"/>} />
-                <Route path="/Event" element={<EventPage />} />
-                <Route path="/Event-create" element={<EventFormPage />} />
-                <Route path="/Event/:id" element={<EventFormPage />} />
-            </Routes>
-            <Toaster />
+            <div className="container mx-auto">
+                <Navigation />
+                <Routes>
+                    <Route path="/" element={< Navigate to="/Event"/>} />
+                    <Route path="/Event" element={<EventPage />} />
+                    <Route path="/Event-create" element={<EventFormPage />} />
+                    <Route path="/Event/:id" element={<EventFormPage />} />
+                </Routes>
+                <Toaster />
+            </div>
         </BrowserRouter>
     )
 }

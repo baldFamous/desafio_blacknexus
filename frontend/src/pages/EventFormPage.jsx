@@ -15,7 +15,7 @@ const params = useParams();
         if (params.id){
             await updateEvent(params.id, data);
             toast.success("Evento actualizado", {
-                position: "top-right",
+                position: "top-center",
                 style: {
                     background: "gray",
                     color: "#fff",
@@ -25,7 +25,7 @@ const params = useParams();
         }else{
             await createEvent(data);
             toast.success("Evento creado", {
-                position: "top-right",
+                position: "top-center",
                 style: {
                     background: "gray",
                     color: "#fff",
@@ -51,33 +51,43 @@ const params = useParams();
     }, []);
 
     return (
-        <div>
+        <div className="max-w-xl mx-auto">
             <form onSubmit={onSubmit}>
                 <input type="text" placeholder="title"
                        {...register("title", {required:true})}
+                    className="bg-zinc-500 p-3 rounded-lg w-full mb-3"
                 />
                 {errors.title && <span>This field is required</span>}
+
                 <textarea rows="3" placeholder="description"
                        {...register("description", {required:true})}
+                    className="bg-zinc-500 p-3 rounded-lg w-full mb-3"
                 />
                 {errors.description && <span>This field is required</span>}
+
                 <input type="text" placeholder="location"
                        {...register("location", {required:true})}
+                    className="bg-zinc-500 p-3 rounded-lg w-full mb-3"
                 />
                 {errors.location && <span>This field is required</span>}
+
                 <input type="date" placeholder="date"
                        {...register("date", {required:true})}
+                    className="bg-zinc-500 p-3 rounded-lg w-full mb-3"
                 />
                 {errors.date && <span>This field is required</span>}
-                <button type="submit">Create</button>
+
+                <button className="bg-blue-600 hover:bg-blue-800 p-3 rounded-lg block w-full mt-3" type="submit">Create</button>
 
             </form>
-            {params.id && <button onClick={(async () => {
+            {params.id && <button
+                className="bg-red-600 hover:bg-red-800 p-3 rounded-lg w-48 mt-3"
+                onClick={(async () => {
                 const res = window.confirm("Are you sure?");
                 if (res){
                     await deleteEvent(params.id);
                     toast.success("Evento eliminado", {
-                position: "top-right",
+                position: "top-center",
                 style: {
                     background: "gray",
                     color: "#fff",

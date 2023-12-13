@@ -4,16 +4,16 @@ export function EventCard({event}) {
 
     const navigate = useNavigate();
     return(
-        <div style={{background: "black"}}
+        <div className="bg-zinc-800 p-4 rounded-3xl hover:bg-zinc-700 hover:cursor-pointer"
             onClick={() =>
                 navigate(`/Event/${event.id}`)
             }
         >
-            <h1>{event.title}</h1>
-            <p>Descripcion: {event.description}</p>
-            <p>Fecha: {event.date}</p>
-            <p>Ubicacion: {event.location}</p>
-            <hr/>
+            <h1 className="font-bold uppercase text-2xl ">{event.title}</h1>
+            <p className="text-slate-500 ">Descripcion: {event.description}</p>
+            <p className="text-slate-500 ">Fecha: {event.date}</p>
+            <p className="text-slate-500 ">Ubicacion: {event.location}</p>
+
         </div>
     );
 }

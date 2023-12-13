@@ -14,7 +14,7 @@ export function EventList(){
         loadEvents();
     }, []);
 
-    return <div>
+    return <div className="grid grid-cols-3 gap-4">
         {events.map(event => (
             <EventCard key={event.id} event={event} />
         ))}
