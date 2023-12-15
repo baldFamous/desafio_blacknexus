@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Sitios permitidos para CORS
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 
 # Configuracion de documentacion de la api
 REST_FRAMEWORK = {
