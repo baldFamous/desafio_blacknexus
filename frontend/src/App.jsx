@@ -17,20 +17,13 @@ function App(){
     return (
         <BrowserRouter>
             <div className="container mx-auto">
-                // Barra de navegación
                 <Navigation />
-                // Rutas
                 <Routes>
-                    // Redirección de la URL raíz a la página de Evento
                     <Route path="/" element={<Navigate to="/Event"/>} />
-                    // Página de Evento
                     <Route path="/Event" element={<EventPage />} />
-                    // Página de creación de Evento
                     <Route path="/Event-create" element={<EventFormPage />} />
-                    // Página de actualización de Evento
                     <Route path="/Event/:id" element={<EventFormPage />} />
                 </Routes>
-                // Notificaciones
                 <Toaster />
             </div>
         </BrowserRouter>
