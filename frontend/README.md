@@ -1,8 +1,64 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Aplicación Gestor de Eventos
 
-Currently, two official plugins are available:
+Este proyecto es una aplicación web para la gestión de eventos. Está construido usando Python y JavaScript, con React como el framework de front-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Primeros Pasos
+
+Estas instrucciones te ayudarán a obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+
+### Prerrequisitos
+
+Necesitas tener instalado lo siguiente:
+
+- Python
+- Pip
+- Node.js
+- NPM
+
+### Instalación
+
+Una serie de ejemplos paso a paso que te indican cómo conseguir un entorno de desarrollo en funcionamiento.
+
+1. Clona el repositorio
+```bash
+git clone https://github.com/baldFamous/desafio_blacknexus.git
+```
+
+2. Instala las dependencias de Python
+```bash
+pip install -r requirements.txt
+```
+
+3. Instala las dependencias de JavaScript
+```bash
+npm install
+```
+
+4. Ejecuta la aplicación localmente, primero el backend y luego el frontend
+```bash
+python manage.py runserver
+```
+```bash
+npm run dev
+```
+
+## Despliegue
+
+Añade notas adicionales sobre cómo desplegar esto en un sistema en vivo.
+
+## Construido Con
+
+- [Python](https://www.python.org/) - El lenguaje de backend utilizado.
+- [JavaScript](https://www.javascript.com/) - El lenguaje de frontend utilizado.
+- [React](https://reactjs.org/) - El framework web utilizado.
+- [Pip](https://pip.pypa.io/en/stable/) - Gestión de Dependencias para Python.
+- [NPM](https://www.npmjs.com/) - Gestión de Dependencias para JavaScript.
+
+## Autores
+
+- **baldFamous** - *Trabajo Inicial* - [baldFamous](https://github.com/baldFamous)
+
+---
+
+Esta traducción proporciona una descripción detallada en español de cómo empezar a trabajar con tu proyecto, incluyendo los pasos para configurar el entorno de desarrollo y las tecnologías utilizadas.
