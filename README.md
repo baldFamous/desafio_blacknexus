@@ -43,10 +43,6 @@ python manage.py runserver
 npm run dev
 ```
 
-## Despliegue
-
-Añade notas adicionales sobre cómo desplegar esto en un sistema en vivo.
-
 ## Construido Con
 
 - [Python](https://www.python.org/) - El lenguaje de backend utilizado.
