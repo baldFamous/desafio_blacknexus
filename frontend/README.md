@@ -60,5 +60,3 @@ Añade notas adicionales sobre cómo desplegar esto en un sistema en vivo.
 - **baldFamous** - *Trabajo Inicial* - [baldFamous](https://github.com/baldFamous)
 
 ---
-
-Esta traducción proporciona una descripción detallada en español de cómo empezar a trabajar con tu proyecto, incluyendo los pasos para configurar el entorno de desarrollo y las tecnologías utilizadas.
