@@ -1,17 +1,25 @@
-import {useForm} from "react-hook-form";
-import {createEvent, deleteEvent, getEvent, updateEvent} from "../api/Events.api.js";
-import {useNavigate, useParams} from "react-router-dom";
-import {useEffect} from "react";
-import toast from "react-hot-toast";
-
-
+/**
+ * EventFormPage es un componente funcional que muestra un formulario para crear o actualizar un evento.
+ * Utiliza el hook useForm de react-hook-form para gestionar el estado del formulario.
+ * Utiliza el hook useNavigate de react-router-dom para navegar a la página del evento cuando se envía el formulario.
+ * Utiliza el hook useParams de react-router-dom para obtener el parámetro id de la URL.
+ * Utiliza el hook useEffect de React para cargar el evento cuando el componente se monta y el parámetro id está presente.
+ * Utiliza las funciones createEvent, deleteEvent, getEvent y updateEvent del archivo Events.api.js para interactuar con la API.
+ * Utiliza la función toast de react-hot-toast para mostrar notificaciones.
+ *
+ * @returns {JSX.Element} Un elemento JSX que representa la página del formulario del evento.
+ */
 export function EventFormPage() {
+    // Hook useForm para gestionar el estado del formulario
+    const {register, clearErrors, handleSubmit, formState:errors, setValue} = useForm();
+    // Hook useNavigate para navegar a la página del evento cuando se envía el formulario
+    const navigate = useNavigate();
+    // Hook useParams para obtener el parámetro id de la URL
+    const params = useParams();
 
-const {register, clearErrors, handleSubmit, formState:errors, setValue} = useForm();
-const navigate = useNavigate();
-const params = useParams();
-
+    // Función para manejar el envío del formulario
     const onSubmit = handleSubmit(async data => {
+        // Si el parámetro id está presente, actualiza el evento
         if (params.id){
             await updateEvent(params.id, data);
             toast.success("Evento actualizado", {
@@ -22,7 +30,8 @@ const params = useParams();
                     fontFamily: "arial"
                 }
             })
-        }else{
+        // Si el parámetro id no está presente, crea un nuevo evento
+        } else {
             await createEvent(data);
             toast.success("Evento creado", {
                 position: "top-center",
@@ -32,11 +41,12 @@ const params = useParams();
                     fontFamily: "arial"
                 }
             })
-
         }
+        // Navega a la página del evento
         navigate("/Event");
     });
 
+    // Hook useEffect para cargar el evento cuando el componente se monta y el parámetro id está presente
     useEffect(() => {
         async function loadEvent() {
             if (params.id){
@@ -45,11 +55,12 @@ const params = useParams();
                 setValue("description", res.data.description);
                 setValue("location", res.data.location);
                 setValue("date", res.data.date);
-            } 
+            }
         }
         loadEvent();
     }, []);
 
+    // Devuelve un elemento JSX que representa la página del formulario del evento
     return (
         <div className="max-w-xl mx-auto">
             <form onSubmit={onSubmit}>
